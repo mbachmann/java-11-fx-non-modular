@@ -1,12 +1,12 @@
 # Java JDK 11 and Fx13 Non-modular
 
-`java-fx-non-modular` sample non-modular project to run with Maven
+`java-11-fx-non-modular` sample non-modular project to run with Maven
 
 ### Linux / Mac
 
 If you run on Linux or Mac, follow these steps:
 
-    cd to the folder java-fx-non-modular
+    cd to the folder java-11-fx-non-modular
 
 To run the project:
 
@@ -15,14 +15,14 @@ To run the project:
 To create a fat jar:
 
     ./mvnw clean compile package
-    java -jar shade/java-fx-non-modular.jar
+    java -jar shade/java-11-fx-non-modular.jar
 
 
 ### Windows
 
 If you run on Windows, follow these steps:
 
-    cd to the folder java-fx-non-modular
+    cd to the folder java-11-fx-non-modular
 
 To run the project:
 
@@ -31,7 +31,7 @@ To run the project:
 To create a fat jar:
 
     mvnw clean compile package
-    java -jar shade\java-fx-non-modular.jar
+    java -jar shade\java-11-fx-non-modular.jar
 
 
 ## Install git for Windows
