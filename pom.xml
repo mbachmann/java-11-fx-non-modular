@@ -21,7 +21,6 @@
       <artifactId>javafx-controls</artifactId>
       <version>${javafx.version}</version>
     </dependency>
-
     <!-- Uncomment for cross-platform fat jar-->
     <!--
       <dependency>
@@ -58,7 +57,7 @@
           <plugin>
               <groupId>org.openjfx</groupId>
               <artifactId>javafx-maven-plugin</artifactId>
-              <version>0.0.5</version>
+              <version>0.0.3</version>
               <configuration>
                   <mainClass>hellofx.HelloFX</mainClass>
               </configuration>
