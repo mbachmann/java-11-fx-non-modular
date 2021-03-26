@@ -4,7 +4,7 @@
 
 `java-11-fx-non-modular` sample non-modular project to run with Maven
 
-### Linux / Mac
+### Linux / Mac / Windows with bash shell
 
 If you run on Linux or Mac, follow these steps:
 
@@ -35,13 +35,17 @@ To create a fat jar:
     mvnw clean compile package
     java -jar shade\java-11-fx-non-modular.jar
 
-## Use jpackage
+## jpackage for platform dependant setup (MacOs or Windows)
 
-### MacOS
+[JPackage Doku](https://docs.oracle.com/en/java/javase/14/jpackage/packaging-tool-user-guide.pdf)
 
 Icon Download
 
-https://iconarchive.com/tag/mac-icns
+https://iconarchive.com/tag/mac-icns 
+
+### MacOS
+
+
 
 XCode CommandLine Tools installieren
 
@@ -93,11 +97,11 @@ jpackage \
 
 ### Windows
 
-Icon Download
 
-https://iconarchive.com/tag/mac-icns
+Wix Toolset installieren
 
-XCode CommandLine Tools installieren
+
+[Wix Tool Set](https://github.com/wixtoolset/wix3/releases/tag/wix3112rtm)
 
 ```
 xcode-select --install
@@ -112,23 +116,27 @@ jlink \
 
 ```
 jpackage \
-  --input shade/ \
+  --input shade \
   --name java-11-fx-non-modular \
   --main-jar java-11-fx-non-modular.jar \
   --main-class hellofx.Launcher \
   --description "Java Fx Non Modular Example" \
   --vendor "ZHAW" \
-  --icon install/assets/icon.icns \
+  --icon install/assets/icon.ico \
   --dest install/output \
   --app-version 1.0 \
-  --runtime-image install/windows/jdk14+fx \
+  --runtime-image install/windows/jdk16+fx \
   --resource-dir install/windows/resources \
-  --type dmg
+  --win-shortcut \
+  --win-dir-chooser \
+  --win-menu \
+  --win-menu-group "ZHAW Hello Fx" \
+  --type exe
 ```
 
 ```
 jpackage \
-  --input shade/ \
+  --input shade \
   --name java-11-fx-non-modular \
   --main-jar java-11-fx-non-modular.jar \
   --main-class hellofx.Launcher \
@@ -137,11 +145,14 @@ jpackage \
   --copyright "ZHAW" \
   --dest install/output \
   --app-version 1.0 \
-  --icon install/assets/icon.icns \
+  --icon install/assets/icon.ico \
   --module-path install/windows/javafx-jmods-16 \
   --add-modules javafx.base,javafx.controls,java.logging \
   --resource-dir install/windows/resources \
-  --type pkg
+  --win-shortcut \
+  --win-dir-chooser \
+  --win-menu --win-menu-group "ZHAW Hello Fx" \
+  --type exe
 ```
 
 
