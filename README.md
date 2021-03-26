@@ -33,19 +33,115 @@ To create a fat jar:
     mvnw clean compile package
     java -jar shade\java-11-fx-non-modular.jar
 
+## Use jpackage
 
-## Install git for Windows
+### MacOS
 
-Install git for Windows:
+Icon Download
 
-[https://git-scm.com/download/win](https://git-scm.com/download/win)
+https://iconarchive.com/tag/mac-icns
+
+XCode CommandLine Tools installieren
+
+```
+xcode-select --install
+```
+
+```
+jlink \
+  --output install/macos/jdk14+fx \
+  --module-path install/macos/javafx-jmods-16 \
+  --add-modules javafx.base,javafx.controls,java.logging
+```
+
+```
+jpackage \
+  --input shade/ \
+  --name java-11-fx-non-modular \
+  --main-jar java-11-fx-non-modular.jar \
+  --main-class hellofx.Launcher \
+  --description "Java Fx Non Modular Example" \
+  --vendor "ZHAW" \
+  --icon install/assets/icon.icns \
+  --dest install/output \
+  --app-version 1.0 \
+  --runtime-image install/macos/jdk14+fx \
+  --resource-dir install/macos/resources \
+  --type dmg
+```
+
+```
+jpackage \
+  --input shade/ \
+  --name java-11-fx-non-modular \
+  --main-jar java-11-fx-non-modular.jar \
+  --main-class hellofx.Launcher \
+  --description "Java Fx Non Modular Example" \
+  --vendor "ZHAW" \
+  --copyright "ZHAW" \
+  --dest install/output \
+  --app-version 1.0 \
+  --icon install/assets/icon.icns \
+  --module-path install/macos/javafx-jmods-16 \
+  --add-modules javafx.base,javafx.controls,java.logging \
+  --resource-dir install/macos/resources \
+  --type pkg
+```
 
 
-## Import Maven Project in Eclipse
+### Windows
 
-Navigate to Import->Maven->Check out Maven project from scm
+Icon Download
 
-If there is no git connector available... please install it
+https://iconarchive.com/tag/mac-icns
+
+XCode CommandLine Tools installieren
+
+```
+xcode-select --install
+```
+
+```
+jlink \
+  --output install/windows/jdk14+fx \
+  --module-path install/windows/javafx-jmods-16 \
+  --add-modules javafx.base,javafx.controls,java.logging
+```
+
+```
+jpackage \
+  --input shade/ \
+  --name java-11-fx-non-modular \
+  --main-jar java-11-fx-non-modular.jar \
+  --main-class hellofx.Launcher \
+  --description "Java Fx Non Modular Example" \
+  --vendor "ZHAW" \
+  --icon install/assets/icon.icns \
+  --dest install/output \
+  --app-version 1.0 \
+  --runtime-image install/windows/jdk14+fx \
+  --resource-dir install/windows/resources \
+  --type dmg
+```
+
+```
+jpackage \
+  --input shade/ \
+  --name java-11-fx-non-modular \
+  --main-jar java-11-fx-non-modular.jar \
+  --main-class hellofx.Launcher \
+  --description "Java Fx Non Modular Example" \
+  --vendor "ZHAW" \
+  --copyright "ZHAW" \
+  --dest install/output \
+  --app-version 1.0 \
+  --icon install/assets/icon.icns \
+  --module-path install/windows/javafx-jmods-16 \
+  --add-modules javafx.base,javafx.controls,java.logging \
+  --resource-dir install/windows/resources \
+  --type pkg
+```
+
 
 
 
