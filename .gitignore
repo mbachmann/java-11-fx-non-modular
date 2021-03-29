@@ -2,6 +2,9 @@
 # Project Specific
 ######################
 /target/www/**
+/install/macos/jdk16+fx/
+/install/windows/jdk16+fx/
+/install/output/
 /src/test/javascript/coverage/
 /src/test/javascript/PhantomJS*/
 
