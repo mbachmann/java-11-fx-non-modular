@@ -1,10 +1,27 @@
-# Java JDK 11+ (JDK 16) and Fx16 Non-modular
+# Java JDK 11+ (JDK 16) and Fx 16 Non-modular
 
 [https://github.com/mbachmann/java-11-fx-non-modular](https://github.com/mbachmann/java-11-fx-non-modular)
 
-`java-11-fx-non-modular` sample non-modular project to run with Maven
+`java-11-fx-non-modular` sample _non-modular_ project to run with _maven_.
+
+This tutorial contains instructions how to run, build and package a _Java Fx_ application:
+
+- [Run a JavaFx project](#run-a-javafx-project)
+- [Build the Fat-Jar](#build-the-fat-jar)
+- [jpackage for platform dependant setup (MacOs or Windows)](#jpackage-for-platform-dependant-setup-macos-or-windows)
+- [Icon Download](#icon-download)
+- [Create an Installer for macOS](#create-an-installer-for-macos)
+- [Create an installer for Windows](#create-an-installer-for-windows)
+
+<br/>
 
 ## Run a JavaFx project
+
+We will discuss three options how to run this project in the _intelliJ_ IDE_
+
+1. Run with the javafx plugin
+2. Run in the IDE with a Launcher Class
+3. Run in the IDE with VM Options
 
 ### Run with the javafx plugin
 
@@ -63,7 +80,7 @@ With the VM-Options in place you can run the application directly (without a lau
 
 ## Build the Fat-Jar
 
-A Fat-Jar is a jar file including the dependencies from the _pom.xml_-file. The shade plugin is producing the _Fat-Jar_ in the
+A _Fat-Jar_ is a jar file including the dependencies from the _pom.xml_-file. The shade plugin is producing the _Fat-Jar_ in the
 folder `shade`.
 
 
@@ -157,7 +174,7 @@ The _jmods_ are platform dependant and can be downloaded from:
 
 [JavaFX - Gluon](https://gluonhq.com/products/javafx/)
 
-We can list the dependencies of the Fat-Jar:
+We can list the dependencies of the _Fat-Jar_:
 
 ```
 jdeps --list-deps shade/*.jar
@@ -213,7 +230,7 @@ jlink \
   --add-modules javafx.base,javafx.controls,javafx.fxml,java.logging
 ```
 
-Since we have a custom runtime image we can run the Fat-Jar with it:
+Since we have a custom runtime image we can run the _Fat-Jar_ with it:
 
 ```
 install/macos/jdk16+fx/bin/java -version
@@ -310,7 +327,7 @@ jlink \
   --add-modules javafx.base,javafx.controls,javafx.fxml,java.logging
 ```
 
-Since we have a custom runtime image we can run the Fat-Jar with it:
+Since we have a custom runtime image we can run the _Fat-Jar_ with it:
 
 ```
 install/windows/jdk16+fx/bin/java -version
