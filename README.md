@@ -345,6 +345,12 @@ jpackage \
 
 Copy the installer from the _install/output_ to your desktop and start the installer.
 
+<br/>
+
+![setup-installer.png](readme/setup-installer.png)
+
+<br/>
+
 ### Create an msi-installer from the Fat-Jar (Custom Runtime Image is created)
 
 Instead of using a runtime image, we can create it on-the-fly.
@@ -375,5 +381,6 @@ jpackage \
 Copy the installer from the _install/output_ to your desktop and start the installer.
 This time we have created a _msi_ installer.
 
+<br/>
 
-
+![msi-installer.png](readme/msi-installer.png)
